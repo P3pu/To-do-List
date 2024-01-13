@@ -1,0 +1,97 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  max-width: 600px;
+  max-height: 600px;
+  margin: auto;
+  background-color: white;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2), -2px -2px 3px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.container h1 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.taksInput {
+  padding: 5px 20px;
+  border: 1px solid #01b101;
+  font-size: 19px;
+  border-radius: 10px;
+  outline: 0;
+}
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.addTaskBtn {
+  padding: 10px 20px;
+  background: #01b101;
+  border: 1px solid #01b101;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 20px;
+  list-style: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 5px;
+}
+
+.btnDelete {
+  background-color: #ff2020;
+  border: 1px solid #ff2020;
+  border-radius: 15px;
+  color: white;
+  outline: 0;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 530px) {
+  .container {
+    max-width: 500px;
+    max-height: 500px;
+    margin: auto;
+    background-color: white;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2), -2px -2px 3px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    overflow: hidden;
+    overflow-y: scroll;
+    text-align: center;
+  }
+  .task {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .taksInput {
+    width: 100%;
+  }
+}
