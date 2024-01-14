@@ -13,28 +13,32 @@ document.addEventListener("keypress", (e) => {
 });
 
 function addTask() {
+  if (taksInput.value.trim() === "") {
+    alert("digite Algo");
+    return;
+  }
+
   const item = document.createElement("li");
   const span = document.createElement("span");
   const bntDelete = document.createElement("button");
+
   item.classList.add("item");
   bntDelete.classList.add("btnDelete");
   bntDelete.innerHTML = "Delete";
 
   bntDelete.addEventListener("click", () => {
     item.remove();
+    updateLocalStorage();
   });
 
-  if (taksInput.value === "") {
-    alert("digite Algo");
-    taksInput.value.remove();
-  } else {
-    span.innerHTML = taksInput.value;
-    taksInput.focus();
-    taksInput.value = "";
-  }
+  span.innerHTML = taksInput.value;
+  taksInput.focus();
+  const taksInputValue = taksInput.value; // Move this line here
+  taksInput.value = "";
+
   item.appendChild(span);
   item.appendChild(bntDelete);
   newTask.appendChild(item);
-}
 
-console.log("oi");
+  localStorage.setItem("Lista", taksInputValue);
+}
