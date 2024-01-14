@@ -28,7 +28,6 @@ function addTask() {
 
   bntDelete.addEventListener("click", () => {
     item.remove();
-    updateLocalStorage();
   });
 
   span.innerHTML = taksInput.value;
